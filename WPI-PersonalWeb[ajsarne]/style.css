@@ -1,0 +1,545 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* FONT */
+@font-face{
+    font-family: 'Migra';
+    src: url(fonts/Migra/Migra-Extrabold.ttf);
+}
+@font-face{
+    font-family: 'DMSans';
+    src: url(fonts/DMSans/DMSans-Bold.ttf);
+}
+
+/* GRID */
+.intro{
+    grid-area:intro;
+    background-color: #231f20;
+    height: 100vh;
+    justify-content: center;
+}
+.about{
+    grid-area:about;
+    background-color: #e1dac8;
+    height: 100vh;
+    justify-content: center;
+}
+.project{
+    grid-area:project;
+    background-color: #bf9e6d;
+    height: 100vh;
+    justify-content: center;
+}
+.contact{
+    grid-area:contact;
+    background-color: #231f20;
+    height: 100vh;
+    justify-content: center;
+}
+.grid{
+    margin:0;
+    display: grid;
+    grid-template-columns: 4fr 3fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "intro intro"
+    "about pic"
+    "project project"
+    "contact contact"
+    ;
+}
+
+/* DESKTOP NAVIGATION */
+.desktop-nav{
+    background: transparent;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    padding-top: 15px;
+    z-index: 5;
+}
+label.logo{
+    color: #f8f0de;
+    font-size: 3em;
+    font-family: migra;
+    line-height: 80px;
+    padding-left: 50px;
+    cursor: pointer;
+}
+.desktop-nav ul{
+    float: right;
+    margin-right: 30px;
+    margin-top: 3px;
+    font-family: dmsans;
+}
+.desktop-nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 40px;
+}
+.desktop-nav ul li a{
+    color:#f8f0de;
+    font-size: 1vw;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+.link:hover{
+    text-decoration: 5px underline solid #b67352;
+    transition: .3s;
+}
+a .logo:hover{
+    background: transparent;
+}
+label:hover{
+    color:#b67352;
+}
+
+/* HEADINGS STYLE */
+h1{
+    font-size:7vw;
+    font-family:migra;
+    color: #f8f0de;
+    margin-top: 20%;
+    text-align: center;
+    word-wrap: normal;
+    flex-direction: column;
+}
+h3{
+    margin-top: 1%;
+    text-align: center;
+    color: #f8f0de;
+    font-size:3.5vw;
+    font-family: dmsans; 
+}
+h4{
+    margin-top: 1%;
+    text-align: center;
+    color: #f8f0de;
+    font-size:2vw;
+    font-family: dmsans;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h5{
+    margin-top: 60px;
+    text-align: center;
+    color: #f8f0de;
+    font-size:2vw;
+    font-family: dmsans; 
+    cursor: pointer;    
+}
+h5 a{
+    border: 5px solid #f8f0de;
+    padding: 0 35px;
+    color:#f8f0de;
+}
+h5 > a:hover{
+    color:#b67352;
+    border-color: #b67352;
+}
+
+/* TYPEWRITER EFFECT */
+.typewriter{
+    animation:typewriter 2s steps(14), typeBlink 1s steps(14) infinite;
+    overflow: hidden; /*hides text to be typed*/
+    white-space: nowrap; /* keeps text on one line*/
+    /* font-family:migra; */
+    color: #f8f0de;
+    border-right: 0.125em solid #b67352;
+    width: 7em; /*cover whole text*/
+    text-align: center;
+    margin-left: 24.5%;
+    /* padding-right:5px; */
+}
+.typewriter ul{
+    color: #e27575;
+}
+@keyframes typewriter{
+    0%{
+        width: 0ch; /*zero characters, starting point*/
+    }
+    100% {
+        /*width: 19ch; count characters, ending point*/
+        width: 12ch; /* ch change due to font*/
+    }
+}
+@keyframes typeBlink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* PARALLAX BACKGROUND */
+body, html {
+    height: 100%;
+}
+.parallax{
+    background: url(intro/ajs.png)
+    repeat fixed 100%;
+}
+.parallax-inner{
+    padding-top:0;
+    height: 100vh;
+}
+
+/* ABOUT SECTION */
+.about-heading{
+    font-size: 5vw;
+    font-family: migra;
+    color: #bf9e6d;
+    margin-top: 130px;
+    margin-left: 50px;
+    left: 0;
+}
+.about-content{
+    font-size: 2vw;
+    font-family: dmsans;
+    color: #231f20;
+    margin: 10px 50px 10px;
+    text-align: justify;
+}
+
+/* PROJECT SECTION */
+.project-descrp{
+    background-color: #bf9e6d;
+    margin-left: 25px;
+}
+.project-heading{
+    margin-top: 130px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 4.5vw;
+    font-family: migra;
+}
+.project-content{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 70px;
+    font-size: 2vw;
+    font-family: dmsans;
+    text-align: justify;
+    color: #e1dac8;
+}
+h5.project-link{
+    text-align: left;
+    font-size: 2vw;
+    color: #e1dac8;
+    margin-left: 20px;
+}
+
+/* IMAGE CAROUSEL */
+.crsl-wrapper {
+    height: 75vh;
+    max-width: 100%;
+    position: relative;
+    border: 50vh;
+    display:block;
+    margin: 130px 50px 50px 50px;
+    border: 5px solid #231f20;
+    box-sizing: border-box;
+}
+.crsl-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px 50px;
+    opacity: 0;
+    transition: all 0.9s onclick;
+    object-position: center;
+}
+.arrow{
+    border: solid black;
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 12px;
+}
+.arrow-previous {
+    left: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(135deg);
+}
+.arrow-previous:hover, .arrow-next:hover{
+    border-color: #bf9e6d;
+}
+.arrow-next {
+    right: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+[id^= "image"] {
+    display: none;
+}
+.image-1 {
+    z-index: 2; /* the z-order of a positioned element and its descendants or flex items */
+    opacity: 1;
+    background: url("intro/1.1.png");
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+}
+.image-2 {
+    background: url("intro/2.1.png");
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+}
+.image-3 {
+    background: url("intro/3.1.png");
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+}
+*:target ~ .image-1{ /* target selector is used to represent a unique element (the target element) with an id matching the URL's fragment */
+    opacity: 0;
+}
+#image-1:target ~ .image-1{ /*target span id = image-1, then selects image-1 elements with bg pic */
+    opacity: 1;
+}
+#image-2:target ~ .image-2, #image-3:target ~ .image-3{
+    z-index: 3; /* Overlapping elements with a larger z-index cover those with a smaller one */
+    opacity: 1;
+} 
+.heading{
+    text-align: center;
+    margin-top: 7em; /* make it 6em for media size change */
+    margin-bottom: 7em;
+    font-size: 50px;
+    color: #bf9e6d;
+    position: sticky;
+    font-style: italic;
+    font-weight: bold
+}
+
+/* CONTACT SECTION */
+.contact-heading{
+    margin-top: 25vh;
+    text-align: center;
+    font-family: migra;
+    font-size: 6vw;
+    color:#e1dac8;
+}
+.contact-content{
+    font-family: dmsans;
+    font-size: 2vw;
+    text-align: center;
+    color: #e1dac8;
+}
+.material-symbols-outlined {
+    font-size: 5vw;
+    margin-top: 15px;
+    margin-left: 47%;
+    color: #f8f0de;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 600,
+  'GRAD' 0,
+  'opsz' 48
+}
+.material-symbols-outlined:hover{
+    color: #b67352;
+}
+.credits{
+    color: #e1dac8;
+    font-family: dmsans;
+    font-size: 12px;
+    margin-top: 30vh;
+    text-align:center;
+}
+
+
+/* RESPONSIVENESS */
+@media only screen and (min-width: 900px){
+    .nav{
+        display: none;
+    }
+    h1, .typewriter{
+        margin-top:30vh;
+    }
+    .crsl-wrapper{
+        float: left;
+        height: 70vh;
+        width: 550px;
+    }
+    }
+@media only screen and (max-width: 900px){
+    .desktop-nav ul li a{
+        display: none;
+    }
+    .desktop-nav label.logo{
+        display: none;
+        height: 100px;
+    }
+    .parallax{
+        display: none;  /* removed due to bg pic being squished*/
+    }
+    .pic{
+        background-image: url(intro/ajs1.png);
+    }
+    h1, .typewriter{
+        font-size:10vw;
+        margin-top:25vh;
+        margin-left: 13%;
+        text-align: center;
+    }
+    h3, .subheading-1{
+        font-size:5vw;
+    }
+    h5, .subheading-2{
+        font-size:4vw;
+    }
+    h5 a{
+        border: 3px solid #f8f0de;
+    }
+
+/* ICONS */
+.material-symbols-outlined {
+    font-size: 35px;
+    color: #f8f0de;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 600,
+  'GRAD' 0,
+  'opsz' 48
+}
+.material-symbols-outlined:hover{
+    color: #b67352;
+}
+body{
+  margin: 0 0 95px 0;
+}
+label.logo1{
+    font-size: 5vw;
+    text-align: center;
+    color: #f8f0de;
+    font-family: migra;
+    line-height: 80px;
+    padding-left: 40px;
+    padding-top: 35px;
+    cursor: pointer;
+}
+.logo1:hover{
+    color: #b67352;
+}
+.nav{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  margin-right: 90px;
+  background-color: transparent;
+  display: flex;
+  overflow-x: auto;
+  z-index: 5;
+}
+.nav-link{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  min-width: 50px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 10px;
+  font-family: dmsans;
+  color: #231f20;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.1s ease-in-out;
+  z-index: 5;
+}
+.nav-link:hover{
+  color: #b67352;
+}
+.nav-text{
+    color: transparent;
+}
+.space{
+    font-size: 45px;
+    color: transparent;
+} 
+.about-heading{
+    font-size: 6vw;
+    font-family: migra;
+    color: #bf9e6d;
+    margin-top: 50px;
+    margin-left: 20px;
+    left: 0;
+}
+.about-content{
+    font-size: 3vw;
+    font-family: dmsans;
+    color: #231f20;
+    margin: 10px 25px 10px;
+    text-align: justify;
+} 
+.crsl-wrapper {
+    height: 50vh;
+    margin-top: 75px;
+}
+.project-heading{
+    margin-top: 5vh;
+    font-size: 5vw;
+}
+.project-descrp{
+    margin-top: 0;
+}
+.project-content{
+    margin-top: 0;
+    font-size: 3vw;
+}
+.project-link{
+    margin-top: 3vh;
+    margin-bottom: 15vh;
+}
+.contact-heading{
+    font-size: 8vw;
+}
+.contact-content{
+    font-size: 3vw;
+}
+.credits{
+    margin-top: 40vh;
+    font-size: 10px;
+}
+}
+
+@media (max-width: 1250px) {
+    .desktop-nav ul li a{
+        font-size: 1.2vw;
+    }
+}
+@media (min-width: 1100px) {
+    .desktop-nav ul li a{
+        font-size: 1.2vw;
+    }
+}
+@media (min-width: 1250px) {
+    .crsl-wrapper{
+        height: 80vh;
+        width: 750px;
+    }
+}
+@media (min-width: 1500px) {
+    .crsl-wrapper{
+        height: 80vh;
+        width: 950px;
+    }
+}
+@media (min-width: 1750px) {
+    .crsl-wrapper{
+        height: 80vh;
+        width: 1250px;
+    }
+}
+
